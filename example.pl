@@ -1,8 +1,11 @@
 #! /usr/bin/perl
 
+BEGIN { push @INC, "." }
+
 use Transfer;
 
 my $ftp_transfer = Transfer->new('ftp://ftp.kernel.org', 'anonymous', 'al@al.com');
+
 my @list = ("a.pl");
 
 $ftp_transfer->get_files(@list);
